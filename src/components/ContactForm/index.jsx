@@ -9,7 +9,6 @@ class ContactForm extends Component {
         number: ''
     }
 
-    nameInputId = nanoid()
 
     handleInput = (event) => {
         const {name, value} = event.currentTarget
@@ -26,11 +25,10 @@ class ContactForm extends Component {
     }
     render() {
         return (<form onSubmit={this.handleSubmit} className={styles.form}>
-            <label htmlFor={this.nameInputId} className={styles.label}> Name
+            <label className={styles.label}> Name
                 <input
                     onChange={this.handleInput}
                     value={this.state.name}
-                    id={this.nameInputId}
                     className={styles.input}
                     type="text"
                     name="name"
@@ -39,11 +37,10 @@ class ContactForm extends Component {
                     required
                 />
             </label>
-            <label htmlFor={this.nameInputId} className={styles.label}> Number
+            <label className={styles.label}> Number
                 <input
                     onChange={this.handleInput}
                     value={this.state.number}
-                    id={this.nameInputId}
                     className={styles.input}
                     type="tel"
                     name="number"

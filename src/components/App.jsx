@@ -36,8 +36,8 @@ export class App extends Component {
     }))
   }
   handleContactDelete = (event) => {
-    const nameToDelete = event.currentTarget.name
-    const updatedContacts = [...this.state.contacts].filter(({ name }) => name !== nameToDelete)
+    const idToDelete = event.currentTarget.id
+    const updatedContacts = [...this.state.contacts].filter(({ id }) => id !== idToDelete)
     
     this.setState(prevState => ({
       ...prevState,

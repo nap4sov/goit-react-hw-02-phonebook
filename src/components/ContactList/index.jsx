@@ -10,13 +10,17 @@ const ContactList = ({ contacts, onDeleteClick }) => {
     
     return (<ul className={styles.list}>
         {contacts.map(({ id, name, number }) => 
-            <ContactListItem key={id} name={name} number={number} onDeleteClick={onDeleteClick} />
+            <ContactListItem key={id} id={id} name={name} number={number} onDeleteClick={onDeleteClick} />
         )}
     </ul>)
 }
 
 ContactList.propTypes = {
-    contacts: PropTypes.array.isRequired,
+    contacts: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        number: PropTypes.string.isRequired,
+    })),
     onDeleteClick: PropTypes.func.isRequired
 }
 
