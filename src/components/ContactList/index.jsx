@@ -1,13 +1,14 @@
 import ContactListItem from "components/ContactListItem"
 import Notification from "components/Notification"
 import PropTypes from 'prop-types'
+import styles from './styles.module.scss'
 
 const ContactList = ({ contacts, onDeleteClick }) => {
     if (contacts.length === 0) {
         return (<Notification title='No contact with such name found' />)
     }
     
-    return (<ul>
+    return (<ul className={styles.list}>
         {contacts.map(({ id, name, number }) => 
             <ContactListItem key={id} name={name} number={number} onDeleteClick={onDeleteClick} />
         )}

@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
+import styles from './styles.module.scss'
 
 const ContactListItem = ({ name, number, onDeleteClick }) =>
-    <li>
-        <span>{name}: </span>
-        <span>{number}</span>
-        <button onClick={onDeleteClick} name={name} type="button">Delete</button>
+    <li className={styles.listItem}>
+        <span>{name}: {number}</span>
+        <button onClick={onDeleteClick} name={name} className={styles.button} type="button">x</button>
     </li>
     
 ContactListItem.propTypes = {
